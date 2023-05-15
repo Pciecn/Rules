@@ -1,5 +1,3 @@
-
-
 /* 参考 */
 /* https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/surgepro_reloadprofile.js */
 /* https://raw.githubusercontent.com/smartmimi/conf/master/surge/functionstatus.js */
