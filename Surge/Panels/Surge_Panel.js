@@ -19,9 +19,9 @@ if ($trigger == "button") await httpAPI("/v1/profiles/reload");
 
   $done({
       title:"𝗦𝗨𝗥𝗚𝗘 𝗣𝗥𝗢",
-      content:`AlexNeilMurphy CONF©️\n`+
+      content:`Pciecn CONF©️\n`+
 	  `--------------\n`+
-	  `@t.me/erdongchan\n`+
+	  `@t.me/Pciecn\n`+
 	  `--------------\n`+
 	  `已持续运行: ${startTime}\n`+
 	  `--------------\n`+
