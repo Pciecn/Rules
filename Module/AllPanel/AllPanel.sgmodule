@@ -27,7 +27,7 @@ Flightradar24 = script-name=Flightradar24  title="Flightradar24",update-interval
 reload=script-path=https://raw.githubusercontent.com/Onlookers-Group/Texonin-LAB-Public/main/Surge/js/js_baby/zReload.js,type=generic
 
 #附带重载配置,Surge Pro标题,可显示启动时间,点击刷新为重载配置
-Surge_Panel = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/surgepro_reloadprofile.js ,argument=icon=crown.fill&color=#f6c970
+Surge_Panel = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/Pciecn/Rules/main/Surge/Panels/Surge_Panel.js ,argument=icon=crown.fill&color=#f6c970
 
 #流量统计 点击以切换网络界面
 TrafficStatistics = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/trafficstatistics.js ,argument=icon=arrow.up.arrow.down.circle&color=#5d84f8
