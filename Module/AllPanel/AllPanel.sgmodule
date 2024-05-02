@@ -9,8 +9,7 @@ Surge_Panel = script-name=Surge_Panel,update-interval=1
 TrafficStatistics = script-name=TrafficStatistics,update-interval=1
 
 #网络详情
-NET_info = script-name=NET_info,update-interval=1
-
+IP-Check = script-name=IP-Check, title="节点详情", content="请刷新", style=info, update-interval=1
 
 #策略组面板 可重复配置 注意修改相应字段
 groupPanel= script-name=groupPanel,update-interval=5
