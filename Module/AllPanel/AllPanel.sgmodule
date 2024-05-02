@@ -1,4 +1,4 @@
-#!name=TutuPanels
+#!name=PciecnPanels
 #!desc=包括重载配置、策略组面板、网络详情、流媒体解锁状态🥳
 
 [Panel]
@@ -21,6 +21,9 @@ groupPanel= script-name=groupPanel,update-interval=5
 #流媒体解锁状态
 stream-all = script-name=stream-all, title="流媒体解锁检测", content="请刷新面板", update-interval=3600
 
+#Flightradar24
+Flightradar24 = script-name=Flightradar24  title="流媒体解锁检测",update-interval=3600
+
 
 [Script]
 #开心一点
@@ -34,15 +37,18 @@ SurgePro_ReloadProfile = type=generic,timeout=10,script-path= https://raw.github
 
 #網路詳情 标题显示为根节点名
 #应当修改的字段 group 代理策略组名称
-NET_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/net_info.js,argument=icon=externaldrive.connected.to.line.below&color=#9a7ff7&group=𝐀𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐜
+NET_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/net_info.js,argument=icon=externaldrive.connected.to.line.below&color=#9a7ff7&group=🚀 PROXY
 
 
 #策略组面板 可重复配置 注意修改相应字段
 #必须更改的字段：group 填写需要显示的策略组名称
-groupPanel = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/fishingworld/something/main/groupPanel.js ,argument=icon=network&color=#86abee&group=𝐀𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐜
+groupPanel = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/fishingworld/something/main/groupPanel.js ,argument=icon=network&color=#86abee&group=🚀 PROXY
 
 #流媒体解锁状态
 stream-all = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/LucaLin233/Luca_Conf/main/Surge/JS/stream-all.js
 
 # > Flightradar24
 Flightradar24 = type=http-response,pattern=^https:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|subscribe),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Flightradar24.js
+
+[MITM]
+hostname = mobile.flightradar24.com
