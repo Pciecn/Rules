@@ -18,13 +18,7 @@ groupPanel= script-name=groupPanel,update-interval=5
 #流媒体解锁状态
 stream-all = script-name=stream-all, title="流媒体解锁检测", content="请刷新面板", update-interval=3600
 
-#Flightradar24
-Flightradar24 = script-name=Flightradar24  title="Flightradar24",update-interval=3600
-
-
 [Script]
-#开心一点
-reload=script-path=https://raw.githubusercontent.com/Onlookers-Group/Texonin-LAB-Public/main/Surge/js/js_baby/zReload.js,type=generic
 
 #附带重载配置,Surge Pro标题,可显示启动时间,点击刷新为重载配置
 Surge_Panel = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/Pciecn/Rules/main/Surge/Panels/Surge_Panel.js ,argument=icon=crown.fill&color=#f6c970
