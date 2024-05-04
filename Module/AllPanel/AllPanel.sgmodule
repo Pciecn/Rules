@@ -5,8 +5,14 @@
 #Surge Pro标题,可显示启动时间,点击刷新为重载配置
 Surge_Panel = script-name=Surge_Panel,update-interval=1
 
-#!name=面板-汽油价格
+#面板-汽油价格
 QiYou = script-name=QiYou,update-interval=43200
+
+#网络连通性测试
+Connectivity_Test = script-name=Connectivity_Test,update-interval=1
+
+#网络测速
+NetSpeed = script-name=NetSpeed,update-interval=-1
 
 #流量统计
 TrafficStatistics = script-name=TrafficStatistics,update-interval=1
@@ -14,7 +20,7 @@ TrafficStatistics = script-name=TrafficStatistics,update-interval=1
 #网络详情
 IP-Check = script-name=IP-Check, title="节点详情", content="请刷新", style=info, update-interval=1
 
-#!name=网络信息 𝕏
+#网络信息
 {{{PANEL_NAME}}} = script-name=网络信息面板,update-interval={{{UPDATE-INTERVAL}}}
 
 #策略组面板 可重复配置 注意修改相应字段
@@ -23,6 +29,8 @@ groupPanel= script-name=groupPanel,update-interval=5
 #流媒体解锁状态
 stream-all = script-name=stream-all, title="流媒体解锁检测", content="请刷新面板", update-interval=3600
 
+#Ping CN CF 二合一面板
+#根据网络延迟生成柱状图
 ProPing = script-name=ProPing,update-interval={{{update-interval}}}
 
 [Script]
@@ -30,7 +38,14 @@ ProPing = script-name=ProPing,update-interval={{{update-interval}}}
 #附带重载配置,Surge Pro标题,可显示启动时间,点击刷新为重载配置
 Surge_Panel = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/Pciecn/Rules/main/Surge/Panels/Surge_Panel.js ,argument=icon=crown.fill&color=#f6c970
 
+#面板-汽油价格
 QiYou = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/cc63/Surge/main/Module/Panel/QiYou/Moore/QiYou.js,argument={{{省份拼音}}}
+
+#网络连通性测试
+Connectivity_Test = type=generic,timeout=3,script-path= https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/script/ConnectivityTest.js,argument=title=Connectivity Test&icon=icloud.and.arrow.down&color=#FF9F0A&server=false
+
+#网络测速
+NetSpeed = type=generic,script-path=https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Net_Speed/Net_Speed.js,argument=title=NetSpeed&iconfast=bolt&iconmid=hare&iconslow=tortoise&colorlow=#06D6A0&colormid=#FFD166&colorhigh=#EF476F&mb=3
 
 #流量统计 点击以切换网络界面
 TrafficStatistics = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/trafficstatistics.js ,argument=icon=arrow.up.arrow.down.circle&color=#5d84f8
@@ -39,13 +54,13 @@ TrafficStatistics = type=generic,timeout=10,script-path= https://raw.githubuserc
 #应当修改的字段 group 代理策略组名称
 IP-Check = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Pciecn/Rules/main/Module/IP_Check/IP-Check.js,argument=icon=externaldrive.connected.to.line.below&color=#9a7ff7&group=🚀 PROXY
 
-# Request
+#网络信息 Request
 网络信息请求 = type=http-request,pattern=^https?:\/\/net-lsp-x\.com,script-path=https://raw.githubusercontent.com/xream/scripts/main/surge/modules/network-info/net-lsp-x.js,timeout=120
 
-# Event
+#网络信息 Event
 {{{EVENT_SCRIPT_NAME}}} = type=event,event-name=network-changed,timeout=120,script-path=https://raw.githubusercontent.com/xream/scripts/main/surge/modules/network-info/net-lsp-x.js,argument="TYPE=EVENT&icon={{{ICON}}}&icon-color={{{ICON-COLOR}}}&LAN={{{LAN}}}&SSID={{{SSID}}}&IPv6={{{IPv6}}}&MASK={{{MASK}}}&DOMESTIC_IPv4={{{DOMESTIC_IPv4}}}&DOMESTIC_IPv6={{{DOMESTIC_IPv6}}}&LANDING_IPv4={{{LANDING_IPv4}}}&LANDING_IPv6={{{LANDING_IPv6}}}&PRIVACY={{{PRIVACY}}}&FLAG={{{FLAG}}}&ENTRANCE_DELAY={{{ENTRANCE_DELAY}}}&TIMEOUT={{{TIMEOUT}}}&EVENT_DELAY={{{EVENT_DELAY}}}&RETRIES={{{RETRIES}}}&RETRY_DELAY={{{RETRY_DELAY}}}&ASN={{{ASN}}}&ORG={{{ORG}}}&DOMESTIC_IPv4_KEY={{{DOMESTIC_IPv4_KEY}}}"
 
-# Panel
+#网络信息 Panel
 网络信息面板 = type=generic,timeout=120,script-path=https://raw.githubusercontent.com/xream/scripts/main/surge/modules/network-info/net-lsp-x.js,argument="icon={{{ICON}}}&icon-color={{{ICON-COLOR}}}&LAN={{{LAN}}}&SSID={{{SSID}}}&IPv6={{{IPv6}}}&MASK={{{MASK}}}&DOMESTIC_IPv4={{{DOMESTIC_IPv4}}}&DOMESTIC_IPv6={{{DOMESTIC_IPv6}}}&LANDING_IPv4={{{LANDING_IPv4}}}&LANDING_IPv6={{{LANDING_IPv6}}}&PRIVACY={{{PRIVACY}}}&FLAG={{{FLAG}}}&ENTRANCE_DELAY={{{ENTRANCE_DELAY}}}&TIMEOUT={{{TIMEOUT}}}&EVENT_DELAY={{{EVENT_DELAY}}}&RETRIES={{{RETRIES}}}&RETRY_DELAY={{{RETRY_DELAY}}}&ASN={{{ASN}}}&ORG={{{ORG}}}&DOMESTIC_IPv4_KEY={{{DOMESTIC_IPv4_KEY}}}"
 
 #策略组面板 可重复配置 注意修改相应字段
@@ -58,6 +73,8 @@ stream-all = type=generic, timeout=15, script-path=https://raw.githubusercontent
 # > Flightradar24
 Flightradar24 = type=http-response,pattern=^https:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|subscribe),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Flightradar24.js
 
+#Ping CN CF 二合一面板
+#根据网络延迟生成柱状图
 ProPing = type=generic,timeout=6,script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/ping/js/pingt.js, script-update-interval={{{script-update}}},argument=Size={{{Size}}}&cnUrl={{{cnUrl}}}&usUrl={{{usUrl}}}&icons={{{icons}}}&icolor={{{icolor}}}
 
 [MITM]
