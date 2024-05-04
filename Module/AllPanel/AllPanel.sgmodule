@@ -5,6 +5,9 @@
 #Surge Pro标题,可显示启动时间,点击刷新为重载配置
 Surge_Panel = script-name=Surge_Panel,update-interval=1
 
+#!name=面板-汽油价格
+QiYou = script-name=QiYou,update-interval=43200
+
 #流量统计
 TrafficStatistics = script-name=TrafficStatistics,update-interval=1
 
@@ -21,6 +24,8 @@ stream-all = script-name=stream-all, title="流媒体解锁检测", content="请
 
 #附带重载配置,Surge Pro标题,可显示启动时间,点击刷新为重载配置
 Surge_Panel = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/Pciecn/Rules/main/Surge/Panels/Surge_Panel.js ,argument=icon=crown.fill&color=#f6c970
+
+QiYou = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/cc63/Surge/main/Module/Panel/QiYou/Moore/QiYou.js,argument={{{省份拼音}}}
 
 #流量统计 点击以切换网络界面
 TrafficStatistics = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/trafficstatistics.js ,argument=icon=arrow.up.arrow.down.circle&color=#5d84f8
