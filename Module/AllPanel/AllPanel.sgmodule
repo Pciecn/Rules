@@ -14,11 +14,16 @@ TrafficStatistics = script-name=TrafficStatistics,update-interval=1
 #网络详情
 IP-Check = script-name=IP-Check, title="节点详情", content="请刷新", style=info, update-interval=1
 
+#!name=网络信息 𝕏
+{{{PANEL_NAME}}} = script-name=网络信息面板,update-interval={{{UPDATE-INTERVAL}}}
+
 #策略组面板 可重复配置 注意修改相应字段
 groupPanel= script-name=groupPanel,update-interval=5
 
 #流媒体解锁状态
 stream-all = script-name=stream-all, title="流媒体解锁检测", content="请刷新面板", update-interval=3600
+
+ProPing = script-name=ProPing,update-interval={{{update-interval}}}
 
 [Script]
 
@@ -34,6 +39,14 @@ TrafficStatistics = type=generic,timeout=10,script-path= https://raw.githubuserc
 #应当修改的字段 group 代理策略组名称
 IP-Check = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Pciecn/Rules/main/Module/IP_Check/IP-Check.js,argument=icon=externaldrive.connected.to.line.below&color=#9a7ff7&group=🚀 PROXY
 
+# Request
+网络信息请求 = type=http-request,pattern=^https?:\/\/net-lsp-x\.com,script-path=https://raw.githubusercontent.com/xream/scripts/main/surge/modules/network-info/net-lsp-x.js,timeout=120
+
+# Event
+{{{EVENT_SCRIPT_NAME}}} = type=event,event-name=network-changed,timeout=120,script-path=https://raw.githubusercontent.com/xream/scripts/main/surge/modules/network-info/net-lsp-x.js,argument="TYPE=EVENT&icon={{{ICON}}}&icon-color={{{ICON-COLOR}}}&LAN={{{LAN}}}&SSID={{{SSID}}}&IPv6={{{IPv6}}}&MASK={{{MASK}}}&DOMESTIC_IPv4={{{DOMESTIC_IPv4}}}&DOMESTIC_IPv6={{{DOMESTIC_IPv6}}}&LANDING_IPv4={{{LANDING_IPv4}}}&LANDING_IPv6={{{LANDING_IPv6}}}&PRIVACY={{{PRIVACY}}}&FLAG={{{FLAG}}}&ENTRANCE_DELAY={{{ENTRANCE_DELAY}}}&TIMEOUT={{{TIMEOUT}}}&EVENT_DELAY={{{EVENT_DELAY}}}&RETRIES={{{RETRIES}}}&RETRY_DELAY={{{RETRY_DELAY}}}&ASN={{{ASN}}}&ORG={{{ORG}}}&DOMESTIC_IPv4_KEY={{{DOMESTIC_IPv4_KEY}}}"
+
+# Panel
+网络信息面板 = type=generic,timeout=120,script-path=https://raw.githubusercontent.com/xream/scripts/main/surge/modules/network-info/net-lsp-x.js,argument="icon={{{ICON}}}&icon-color={{{ICON-COLOR}}}&LAN={{{LAN}}}&SSID={{{SSID}}}&IPv6={{{IPv6}}}&MASK={{{MASK}}}&DOMESTIC_IPv4={{{DOMESTIC_IPv4}}}&DOMESTIC_IPv6={{{DOMESTIC_IPv6}}}&LANDING_IPv4={{{LANDING_IPv4}}}&LANDING_IPv6={{{LANDING_IPv6}}}&PRIVACY={{{PRIVACY}}}&FLAG={{{FLAG}}}&ENTRANCE_DELAY={{{ENTRANCE_DELAY}}}&TIMEOUT={{{TIMEOUT}}}&EVENT_DELAY={{{EVENT_DELAY}}}&RETRIES={{{RETRIES}}}&RETRY_DELAY={{{RETRY_DELAY}}}&ASN={{{ASN}}}&ORG={{{ORG}}}&DOMESTIC_IPv4_KEY={{{DOMESTIC_IPv4_KEY}}}"
 
 #策略组面板 可重复配置 注意修改相应字段
 #必须更改的字段：group 填写需要显示的策略组名称
@@ -45,5 +58,7 @@ stream-all = type=generic, timeout=15, script-path=https://raw.githubusercontent
 # > Flightradar24
 Flightradar24 = type=http-response,pattern=^https:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|subscribe),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Flightradar24.js
 
+ProPing = type=generic,timeout=6,script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/ping/js/pingt.js, script-update-interval={{{script-update}}},argument=Size={{{Size}}}&cnUrl={{{cnUrl}}}&usUrl={{{usUrl}}}&icons={{{icons}}}&icolor={{{icolor}}}
+
 [MITM]
-hostname = mobile.flightradar24.com
+hostname = mobile.flightradar24.com, %APPEND% net-lsp-x.com
