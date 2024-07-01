@@ -6,13 +6,14 @@
 Surge_Panel = script-name=Surge_Panel,update-interval=1
 
 #面板-汽油价格
-QiYou = script-name=QiYou,update-interval=43200
+#QiYou = script-name=QiYou,update-interval=43200
 
 #网络连通性测试
 Connectivity_Test = script-name=Connectivity_Test,update-interval=1
 
 #网络测速
-NetSpeed = script-name=NetSpeed,update-interval=-1
+#NetSpeed = script-name=NetSpeed,update-interval=-1
+Speed = script-name=Speed,update-interval=-1
 
 #流量统计
 TrafficStatistics = script-name=TrafficStatistics,update-interval=1
@@ -36,13 +37,14 @@ ProPing = script-name=ProPing,update-interval={{{update-interval}}}
 Surge_Panel = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/Pciecn/Rules/main/Surge/Panels/Surge_Panel.js ,argument=icon=crown.fill&color=#f6c970
 
 #面板-汽油价格
-QiYou = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/cc63/Surge/main/Module/Panel/QiYou/Moore/QiYou.js,argument={{{省份拼音}}}
+#QiYou = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/cc63/Surge/main/Module/Panel/QiYou/Moore/QiYou.js,argument={{{省份拼音}}}
 
 #网络连通性测试
 Connectivity_Test = type=generic,timeout=3,script-path= https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/script/ConnectivityTest.js,argument=title=Connectivity Test&icon=icloud.and.arrow.down&color=#FF9F0A&server=false
 
 #网络测速
-NetSpeed = type=generic,script-path=https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Net_Speed/Net_Speed.js,argument=title=NetSpeed&iconfast=bolt&iconmid=hare&iconslow=tortoise&colorlow=#06D6A0&colormid=#FFD166&colorhigh=#EF476F&mb=3
+#NetSpeed = type=generic,script-path=https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Net_Speed/Net_Speed.js,argument=title=NetSpeed&iconfast=bolt&iconmid=hare&iconslow=tortoise&colorlow=#06D6A0&colormid=#FFD166&colorhigh=#EF476F&mb=3
+Speed = type=generic,script-path=https://raw.githubusercontent.com/cc63/Surge/main/Module/Panel/Speed/Moore/Speed.js,argument=title=网速测试&iconfast=bolt&iconmid=hare&iconslow=tortoise&colorlow=#06D6A0&colormid=#FFD166&colorhigh=#EF476F&mb=3
 
 #流量统计 点击以切换网络界面
 TrafficStatistics = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/fishingworld/something/main/PanelScripts/trafficstatistics.js ,argument=icon=arrow.up.arrow.down.circle&color=#5d84f8
