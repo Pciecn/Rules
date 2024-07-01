@@ -13,7 +13,7 @@ Connectivity_Test = script-name=Connectivity_Test,update-interval=1
 
 #网络测速
 #NetSpeed = script-name=NetSpeed,update-interval=-1
-Speed = script-name=Speed,update-interval=-1
+Speed = script-name=网速测试,update-interval=-1
 
 #流量统计
 TrafficStatistics = script-name=TrafficStatistics,update-interval=1
