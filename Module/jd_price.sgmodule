@@ -4,7 +4,7 @@
 
 [Script]
 # > 京东比价
-[京东比价]详情通知版 = type=http-request, pattern=^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/bijia.js, timeout=60
+^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/bijia.js
 
 [MITM]
 hostname = in.m.jd.com
